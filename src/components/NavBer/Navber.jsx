@@ -19,20 +19,24 @@ export default function NavBar() {
     }
     
   return (
-    <nav>
-        <div onClick = {()=>click()} className="text-3xl">
-            {
-                open=== true? <IoIosCloseCircleOutline />:<HiMenu />
-            }
-        </div>
-        
-        <ul className="flex gap-5 text-sm md:text-base lg:text-xl">
-            {
-                routes.map(route=>
-                <Link key={route.id} route={route}></Link>)   
-            }
+    <nav className=""> 
+        <div className="bg-slate-700 text-stone-100 p-10 ">
+            <div onClick = {()=>click()} className="text-3xl md:hidden ">
+                {
+                    open=== true? <IoIosCloseCircleOutline />:<HiMenu />
+                }
+            </div>
             
-      </ul>
+            <ul className={`text-sm md:text-base lg:text-xl gap-5 p-5   rounded-2xl absolute md:static md:flex duration-1000 bg-slate-700 
+                ${open?'top-24':'-top-56'}`}>
+                {
+                    routes.map(route=>
+                    <Link key={route.id} route={route}></Link>)   
+                }
+                
+            </ul>
+        </div>
     </nav>
   )
 }
+
