@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export default function Link({route}) {
     return (
@@ -9,5 +9,11 @@ export default function Link({route}) {
           </li>
       </div>
     )
-  }
+  };
+
+Link.propTypes = {
+    route: PropTypes.object,
+
+}
+
   

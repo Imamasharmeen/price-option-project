@@ -1,4 +1,5 @@
 import Link from "./Link";
+import { HiMenu } from "react-icons/hi";
 
 
 export default function NavBar() {
@@ -12,11 +13,11 @@ export default function NavBar() {
     
   return (
     <nav>
-        <ul className="flex text-base">
+        <HiMenu className="text-3xl"/>
+        <ul className="flex gap-5 text-sm md:text-base lg:text-xl">
             {
                 routes.map(route=>
-                <Link key={route.id} route={route}></Link>)
-                
+                <Link key={route.id} route={route}></Link>)   
             }
             
       </ul>
